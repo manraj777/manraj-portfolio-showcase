@@ -10,11 +10,11 @@ type SkillCategory = {
 const skillCategories: SkillCategory[] = [
   {
     name: "Languages",
-    skills: ["C", "Python", "Java", "SQL", "TypeScript", "JavaScript", "HTML/CSS"],
+    skills: ["C/C++", "Python", "JavaScript", "TypeScript", "SQL", "HTML/CSS"],
   },
   {
     name: "Frameworks & Libraries",
-    skills: ["React", "Node.js", "Express", "Tailwind", "Axios", "pandas", "NumPy", "Matplotlib"],
+    skills: ["React", "Next.js", "Node.js", "Express", "Tailwind CSS", "Axios", "pandas", "NumPy"],
   },
   {
     name: "Tools & Platforms",
@@ -22,7 +22,7 @@ const skillCategories: SkillCategory[] = [
   },
   {
     name: "Other",
-    skills: ["LATEX", "Bun"],
+    skills: ["LATEX", "Bun", "RESTful APIs", "WebSocket"],
   },
 ];
 

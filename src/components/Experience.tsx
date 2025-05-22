@@ -17,34 +17,29 @@ type CertificationItem = {
 
 const experiences: ExperienceItem[] = [
   {
-    title: "Intern",
-    company: "Accenture Virtual Experience Program",
-    period: "June - July 2023",
-    description: "Simulated real-world client project exposure."
-  },
-  {
-    title: "Learner",
-    company: "ISRO START Program",
-    period: "July - Aug 2023",
-    description: "Learned foundational concepts in space science and research."
-  },
-  {
     title: "Co-founder",
-    company: "Build Community (S.D.C.)",
+    company: "Student Development Community (S.D.C.)",
     period: "Oct 2023 - Present",
-    description: "A growing dev community fostering learning and collaboration."
+    description: "Built a 300+ member student community, organized 12+ events for developer growth."
+  },
+  {
+    title: "Head of Marketing",
+    company: "TripBozo",
+    period: "Apr 2025 - Present",
+    description: "Increased platform visibility through SEO and social media campaigns."
+  },
+  {
+    title: "Contributor",
+    company: "PralayMitra",
+    period: "Dec 2024 - Mar 2025",
+    description: "Worked on disaster alert APIs and chatbot integration for emergency response."
   }
 ];
 
 const certifications: CertificationItem[] = [
   {
     title: "Google Cloud Computing",
-    issuer: "NPTEL",
-    year: "2023"
-  },
-  {
-    title: "Python Programming",
-    issuer: "HackerRank",
+    issuer: "NPETL",
     year: "2023"
   },
   {
@@ -59,7 +54,7 @@ const Experience = () => {
     <section id="experience" className="section-padding">
       <div className="container-custom">
         <h2 className="section-title text-center mb-16">
-          <span className="text-accent">Experience</span> & Education
+          <span className="text-accent">Experience</span> & Recognition
         </h2>
         
         <div className="grid md:grid-cols-2 gap-16">

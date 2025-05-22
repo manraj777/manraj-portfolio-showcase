@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Github, Linkedin, Send } from 'lucide-react';
+import { Mail, Github, Linkedin, Phone, Send } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -24,6 +24,14 @@ const Contact = () => {
               >
                 <Mail className="h-5 w-5" />
                 <span>manraj.engg@gmail.com</span>
+              </a>
+              
+              <a 
+                href="tel:+916261543983"
+                className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors"
+              >
+                <Phone className="h-5 w-5" />
+                <span>+91 6261543983</span>
               </a>
               
               <a 

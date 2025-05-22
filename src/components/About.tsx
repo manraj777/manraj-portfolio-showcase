@@ -10,9 +10,9 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
             <p className="text-lg mb-6">
-              I'm a B.Tech student in IT with a strong interest in web development, embedded systems, and AI. 
-              I've interned with Accenture, participated in ISRO's START program, and co-founded Build Community 
-              to help developers grow together.
+              Hi, I'm Manraj — a B.Tech IT student at Samrat Ashok Technological Institute, passionate about full-stack development, 
+              algorithmic trading, and community-driven learning. I co-founded the Student Development Community (S.D.C.), 
+              contribute to open-source disaster management tools, and love building impactful projects.
             </p>
             
             <div className="grid grid-cols-2 gap-4 mb-6">
@@ -25,14 +25,14 @@ const About = () => {
               <div>
                 <h3 className="font-semibold mb-2 text-accent">CGPA</h3>
                 <p>7.5/10</p>
-                <p className="text-sm text-muted-foreground">Current Academic Standing</p>
+                <p className="text-sm text-muted-foreground">Expected Graduation: June 2026</p>
               </div>
             </div>
             
             <div>
               <h3 className="font-semibold mb-2 text-accent">Key Coursework</h3>
               <div className="flex flex-wrap gap-2">
-                {['DSA', 'AI', 'Embedded Systems', 'DBMS', 'Web Technology', 'Linux & Terminal Scripting'].map((course) => (
+                {['OOP', 'DSA', 'AI', 'Embedded Systems', 'DBMS', 'Web Technology', 'Linux Scripting'].map((course) => (
                   <span key={course} className="bg-muted px-3 py-1 rounded-full text-sm">
                     {course}
                   </span>
@@ -49,21 +49,21 @@ const About = () => {
             </div>
             
             <div className="timeline-item">
-              <h4 className="font-medium">Accenture Virtual Experience</h4>
-              <p className="text-sm text-muted-foreground">June - July 2023</p>
-              <p className="mt-1">Learned industry practices through simulated client projects</p>
+              <h4 className="font-medium">Co-founded Student Development Community</h4>
+              <p className="text-sm text-muted-foreground">Oct 2023</p>
+              <p className="mt-1">Started a 300+ member community to foster learning and collaboration</p>
             </div>
             
             <div className="timeline-item">
-              <h4 className="font-medium">ISRO START Program</h4>
-              <p className="text-sm text-muted-foreground">July - Aug 2023</p>
-              <p className="mt-1">Explored space science and research fundamentals</p>
+              <h4 className="font-medium">Joined PralayMitra as Contributor</h4>
+              <p className="text-sm text-muted-foreground">Dec 2024</p>
+              <p className="mt-1">Worked on disaster alert APIs and chatbot integration</p>
             </div>
             
             <div className="timeline-item">
-              <h4 className="font-medium">Co-founded Build Community</h4>
-              <p className="text-sm text-muted-foreground">Oct 2023 - Present</p>
-              <p className="mt-1">Creating a platform for developers to learn and grow together</p>
+              <h4 className="font-medium">Head of Marketing at TripBozo</h4>
+              <p className="text-sm text-muted-foreground">Apr 2025</p>
+              <p className="mt-1">Increased platform visibility through SEO and social media</p>
             </div>
           </div>
         </div>

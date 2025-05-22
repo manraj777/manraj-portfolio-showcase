@@ -22,10 +22,10 @@ const Hero = () => {
               <span className="text-accent">Gupta</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-md">
-              Aspiring Full-Stack Developer | Community Builder | Tech Enthusiast
+              Developer | Community Builder | IT Undergrad
             </p>
             <p className="text-lg text-muted-foreground max-w-lg">
-              I build web applications, IoT integrations, and developer communities that make a difference.
+              I build scalable projects and communities that matter.
             </p>
             
             <div className="flex flex-wrap gap-4 pt-4">

@@ -12,23 +12,30 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "Trade-Strategy",
-    description: "TypeScript app to optimize buying strategies between liquid and illiquid markets.",
-    tech: ["TypeScript", "Node.js", "Twitch API", "Axios"],
-    github: "#",
-    image: "bg-blue-500",
-  },
-  {
-    title: "Online Chess Game",
-    description: "Multiplayer chess app with real-time sync using WebSocket and React.",
-    tech: ["React", "TypeScript", "WebSocket", "Vite", "Tailwind", "Node.js"],
+    title: "Chess (Online Game)",
+    description: "Real-time multiplayer chess game with WebSocket integration and React frontend.",
+    tech: ["React", "TypeScript", "WebSocket", "Vite", "Tailwind CSS", "Node.js"],
     github: "#",
     image: "bg-green-500",
   },
   {
-    title: "ROBOScoccer Bot",
-    description: "Custom Minecraft server plugin managing player hunger with persistent data saving.",
-    tech: ["Java", "Maven", "API Spigot", "IntelliJIDEA"],
+    title: "Trade Strategy Bot",
+    description: "Automated arbitrage strategy implementation for illiquid markets with TypeScript.",
+    tech: ["TypeScript", "Node.js", "APIs", "Axios"],
+    github: "#",
+    image: "bg-blue-500",
+  },
+  {
+    title: "Medveda",
+    description: "Health-tech platform built with Next.js and Firebase integration for medical data management.",
+    tech: ["Next.js", "Firebase", "Tailwind CSS", "React"],
+    github: "#",
+    image: "bg-purple-500",
+  },
+  {
+    title: "PralayMitra",
+    description: "Disaster alerting platform leveraging weather APIs with chatbot integration for emergency response.",
+    tech: ["React", "Node.js", "Weather APIs", "Chat Integration"],
     github: "#",
     image: "bg-orange-500",
   },
@@ -40,7 +47,7 @@ const Projects = () => {
       <div className="container-custom">
         <h2 className="section-title text-center">My <span className="text-accent">Projects</span></h2>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {projects.map((project) => (
             <div
               key={project.title}
