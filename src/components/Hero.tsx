@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Download, Send } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const Hero = () => {
   return (
@@ -48,11 +49,13 @@ const Hero = () => {
         
         <div className="order-1 md:order-2 relative mx-auto">
           <div className="relative w-[280px] h-[280px] md:w-[380px] md:h-[380px] animate-float">
-            {/* Profile image placeholder with cool border */}
+            {/* Profile image with border */}
             <div className="w-full h-full rounded-2xl overflow-hidden relative z-10 border-2 border-accent">
-              <div className="w-full h-full bg-secondary flex items-center justify-center">
-                <div className="text-6xl font-bold text-accent">MG</div>
-              </div>
+              <img 
+                src="/lovable-uploads/6696c206-a53a-4cb4-bde6-684c356e37bc.png" 
+                alt="Manraj Gupta" 
+                className="w-full h-full object-cover"
+              />
             </div>
             
             {/* Background elements */}
