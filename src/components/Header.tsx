@@ -33,11 +33,11 @@ const Header = () => {
         </a>
         
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#about" className="nav-link">About</a>
-          <a href="#skills" className="nav-link">Skills</a>
-          <a href="#projects" className="nav-link">Projects</a>
-          <a href="#experience" className="nav-link">Experience</a>
-          <a href="#contact" className="nav-link">Contact</a>
+          <a href="#about" className="nav-link group">About</a>
+          <a href="#skills" className="nav-link group">Skills</a>
+          <a href="#projects" className="nav-link group">Projects</a>
+          <a href="#experience" className="nav-link group">Experience</a>
+          <a href="#contact" className="nav-link group">Contact</a>
         </nav>
 
         <div className="flex items-center gap-4">

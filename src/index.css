@@ -131,7 +131,7 @@
   }
   
   .nav-link {
-    @apply text-sm font-medium transition-all duration-300 hover:text-accent relative group;
+    @apply text-sm font-medium transition-all duration-300 hover:text-accent relative;
   }
 
   .nav-link::after {
