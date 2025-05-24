@@ -50,7 +50,10 @@ const Header = () => {
             {theme === 'light' ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
           </Button>
           
-          <a href="#contact" className="btn-primary text-sm hidden md:block">
+          <a 
+            href="#contact" 
+            className="btn-primary text-sm px-4 py-2 rounded-lg font-medium transition-all duration-300 shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-105 bg-gradient-to-r from-accent to-accent/90 hover:from-accent/90 hover:to-accent text-accent-foreground hidden md:inline-flex items-center justify-center"
+          >
             Get in Touch
           </a>
 

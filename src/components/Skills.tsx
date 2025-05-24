@@ -47,10 +47,7 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <div 
               key={category.name}
-              className={cn(
-                "glass-card p-8 rounded-xl card-hover group",
-                index % 2 === 0 ? "md:transform md:translate-y-8" : ""
-              )}
+              className="glass-card p-8 rounded-xl card-hover group h-full flex flex-col"
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="text-3xl group-hover:scale-110 transition-transform duration-300">
@@ -59,7 +56,7 @@ const Skills = () => {
                 <h3 className="text-2xl font-semibold gradient-text">{category.name}</h3>
               </div>
               
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 flex-1">
                 {category.skills.map((skill, skillIndex) => (
                   <div 
                     key={skill}

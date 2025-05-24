@@ -79,8 +79,42 @@
 
   body {
     @apply bg-background text-foreground font-inter transition-colors duration-300;
-    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--secondary)) 100%);
+    background: 
+      radial-gradient(circle at 20% 80%, hsl(var(--accent) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(var(--accent) / 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, hsl(var(--accent) / 0.05) 0%, transparent 50%),
+      linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--secondary)) 100%);
     min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 50% 50%, hsl(var(--accent) / 0.03) 0%, transparent 70%),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        hsl(var(--border) / 0.03) 2px,
+        hsl(var(--border) / 0.03) 4px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 2px,
+        hsl(var(--border) / 0.03) 2px,
+        hsl(var(--border) / 0.03) 4px
+      );
+    pointer-events: none;
+    z-index: -1;
+    animation: backgroundPulse 20s ease-in-out infinite;
   }
 
   ::-webkit-scrollbar {
@@ -206,6 +240,17 @@
   }
   50% { 
     transform: translateY(-15px) rotate(5deg);
+  }
+}
+
+@keyframes backgroundPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
   }
 }
 
