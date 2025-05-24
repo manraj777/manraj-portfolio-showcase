@@ -1,11 +1,77 @@
 
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Github, Linkedin, Phone, Send } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
+  const form = useRef<HTMLFormElement>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const { toast } = useToast();
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Validation Error",
+        description: "Please fill in all fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!form.current) return;
+
+    setIsLoading(true);
+
+    try {
+      await emailjs.sendForm(
+        'service_b4hguab',
+        'template_r4b6hci',
+        form.current,
+        'Ae1JX1pJz0BRRtYiw'
+      );
+
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your message. I'll get back to you soon!",
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast({
+        title: "Failed to Send",
+        description: "Something went wrong. Please try again or contact me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section id="contact" className="section-padding bg-secondary">
       <div className="container-custom">
@@ -56,15 +122,19 @@ const Contact = () => {
             </div>
           </div>
           
-          <form className="space-y-6">
+          <form ref={form} onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block mb-2 text-sm font-medium">
                 Name
               </label>
               <Input
                 id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
                 placeholder="Your name"
                 className="bg-background border-border"
+                required
               />
             </div>
             
@@ -74,9 +144,13 @@ const Contact = () => {
               </label>
               <Input
                 id="email"
+                name="email"
                 type="email"
+                value={formData.email}
+                onChange={handleInputChange}
                 placeholder="your.email@example.com"
                 className="bg-background border-border"
+                required
               />
             </div>
             
@@ -86,14 +160,31 @@ const Contact = () => {
               </label>
               <Textarea
                 id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
                 placeholder="Your message"
                 className="bg-background border-border min-h-32"
+                required
               />
             </div>
             
-            <Button type="submit" className="btn-primary w-full">
-              <Send className="mr-2 h-4 w-4" /> 
-              Send Message
+            <Button 
+              type="submit" 
+              className="btn-primary w-full" 
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                <>
+                  <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-background border-t-transparent" />
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <Send className="mr-2 h-4 w-4" /> 
+                  Send Message
+                </>
+              )}
             </Button>
           </form>
         </div>
