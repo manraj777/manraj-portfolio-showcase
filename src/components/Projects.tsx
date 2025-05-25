@@ -16,28 +16,28 @@ const projects: Project[] = [
     description: "Real-time multiplayer chess game with WebSocket integration and React frontend.",
     tech: ["React", "TypeScript", "WebSocket", "Vite", "Tailwind CSS", "Node.js"],
     github: "https://github.com/manraj777/Chess.com",
-    image: "bg-green-500",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "Trade Strategy Bot",
     description: "Automated arbitrage strategy implementation for illiquid markets with TypeScript.",
     tech: ["TypeScript", "Node.js", "APIs", "Axios"],
     github: "https://github.com/manraj777/Trade-Strategy",
-    image: "bg-blue-500",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "Medveda",
     description: "Health-tech platform built with Next.js and Firebase integration for medical data management.",
     tech: ["Next.js", "Firebase", "Tailwind CSS", "React"],
-    github: "https://github.com/yourusername/medveda",
-    image: "bg-purple-500",
+    github: "https://github.com/manraj777/MedVeda",
+    image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "PralayMitra",
     description: "Disaster alerting platform leveraging weather APIs with chatbot integration for emergency response.",
     tech: ["React", "Node.js", "Weather APIs", "Chat Integration"],
-    github: "https://github.com/yourusername/pralaymitra",
-    image: "bg-orange-500",
+    github: "https://github.com/manraj777/Pralay_Mitra",
+    image: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=800&q=80",
   },
 ];
 
@@ -53,7 +53,13 @@ const Projects = () => {
               key={project.title}
               className="bg-background rounded-lg overflow-hidden border border-border flex flex-col card-hover"
             >
-              <div className={`${project.image} h-48 w-full`}></div>
+              <div className="h-48 w-full overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                />
+              </div>
               
               <div className="p-6 flex-grow">
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
