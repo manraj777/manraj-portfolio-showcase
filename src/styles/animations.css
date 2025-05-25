@@ -15,6 +15,18 @@
   animation: float 6s ease-in-out infinite;
 }
 
+.animation-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -29,9 +41,11 @@
 @keyframes pulseGlow {
   from {
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    transform: scale(1);
   }
   to {
     box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+    transform: scale(1.02);
   }
 }
 

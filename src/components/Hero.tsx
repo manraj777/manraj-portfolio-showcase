@@ -7,11 +7,21 @@ import { cn } from '@/lib/utils';
 const Hero = () => {
   return (
     <section className="min-h-screen flex items-center pt-20 relative overflow-hidden">
-      {/* Enhanced gradient background */}
+      {/* Enhanced interactive background for both themes */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 right-0 h-96 w-96 bg-gradient-to-br from-accent/20 via-accent/10 to-transparent rounded-full blur-[120px] animate-pulse-glow" />
-        <div className="absolute bottom-0 left-0 h-96 w-96 bg-gradient-to-tr from-accent/15 via-accent/5 to-transparent rounded-full blur-[120px] animate-pulse-glow" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-72 w-72 bg-accent/5 rounded-full blur-[100px]" />
+        {/* Animated gradient orbs */}
+        <div className="absolute top-10 right-10 h-96 w-96 bg-gradient-to-br from-accent/30 via-accent/15 to-transparent dark:from-accent/20 dark:via-accent/10 rounded-full blur-[120px] animate-pulse-glow" />
+        <div className="absolute bottom-10 left-10 h-96 w-96 bg-gradient-to-tr from-accent/25 via-accent/10 to-transparent dark:from-accent/15 dark:via-accent/5 rounded-full blur-[120px] animate-pulse-glow animation-delay-1000" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-72 w-72 bg-accent/10 dark:bg-accent/5 rounded-full blur-[100px] animate-float" />
+        
+        {/* Interactive floating elements */}
+        <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-accent/40 rounded-full animate-bounce-slow" />
+        <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-accent/30 rounded-full animate-bounce-slow animation-delay-500" />
+        <div className="absolute top-1/2 right-1/3 w-2 h-2 bg-accent/20 rounded-full animate-float animation-delay-2000" />
+        
+        {/* Gradient mesh background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-accent/5 dark:from-accent/3 dark:to-accent/3" />
+        <div className="absolute inset-0 bg-gradient-to-tl from-secondary/10 via-transparent to-secondary/10 dark:from-secondary/5 dark:to-secondary/5" />
       </div>
       
       <div className="container-custom grid md:grid-cols-2 gap-8 items-center">
