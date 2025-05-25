@@ -15,14 +15,14 @@ const projects: Project[] = [
     title: "Chess (Online Game)",
     description: "Real-time multiplayer chess game with WebSocket integration and React frontend.",
     tech: ["React", "TypeScript", "WebSocket", "Vite", "Tailwind CSS", "Node.js"],
-    github: "https://github.com/yourusername/chess-online-game",
+    github: "https://github.com/manraj777/Chess.com",
     image: "bg-green-500",
   },
   {
     title: "Trade Strategy Bot",
     description: "Automated arbitrage strategy implementation for illiquid markets with TypeScript.",
     tech: ["TypeScript", "Node.js", "APIs", "Axios"],
-    github: "https://github.com/yourusername/trade-strategy-bot",
+    github: "https://github.com/manraj777/Trade-Strategy",
     image: "bg-blue-500",
   },
   {
