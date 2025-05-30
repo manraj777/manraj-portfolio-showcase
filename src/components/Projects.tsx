@@ -44,7 +44,7 @@ const projects: Project[] = [
     description: "Disaster alerting platform leveraging weather APIs with intelligent chatbot integration for emergency response and community safety.",
     tech: ["React", "Node.js", "Weather APIs", "Chat Integration"],
     github: "https://github.com/manraj777/Pralay_Mitra",
-    demo: "https://github.com/manraj777/Pralay_Mitra", // Add your demo URL here
+    demo: "https://pralay-mitra.onrender.com/",
     image: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=800&q=80",
   },
 ];
