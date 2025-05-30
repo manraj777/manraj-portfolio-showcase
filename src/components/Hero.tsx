@@ -1,10 +1,20 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Download, Send } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const Hero = () => {
+  const handleViewResume = () => {
+    window.open('/lovable-uploads/09729fa8-cae7-4f34-9e4b-5154ce1a1f22.png', '_blank');
+  };
+
+  const handleContactMe = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="min-h-screen flex items-center pt-20 relative overflow-hidden">
       {/* Enhanced interactive background for both themes */}
@@ -47,16 +57,18 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-wrap gap-4 pt-6">
-              <Button className={cn(
-                "btn-primary flex items-center gap-2 text-base group"
-              )}>
+              <Button 
+                className={cn("btn-primary flex items-center gap-2 text-base group")}
+                onClick={handleViewResume}
+              >
                 <Download size={16} className="group-hover:animate-bounce" />
                 View Resume
               </Button>
               
-              <Button className={cn(
-                "btn-secondary flex items-center gap-2 text-base group"
-              )}>
+              <Button 
+                className={cn("btn-secondary flex items-center gap-2 text-base group")}
+                onClick={handleContactMe}
+              >
                 <Send size={16} className="group-hover:translate-x-1 transition-transform" />
                 Contact Me
               </Button>
