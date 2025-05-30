@@ -9,10 +9,7 @@ const Hero = () => {
   };
 
   const handleContactMe = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    window.open('https://wa.me/916261543983', '_blank');
   };
 
   return (
