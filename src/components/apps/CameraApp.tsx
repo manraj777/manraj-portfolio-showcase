@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Camera, Video, RotateCcw, Flash, Grid } from 'lucide-react';
+import { Camera, Video, RotateCcw, Slash, Grid } from 'lucide-react';
 
 interface CameraAppProps {
   onClose: () => void;
@@ -37,7 +37,7 @@ const CameraApp: React.FC<CameraAppProps> = ({ onClose }) => {
             onClick={() => setFlashEnabled(!flashEnabled)}
             className={`p-2 rounded-full ${flashEnabled ? 'bg-yellow-500' : 'bg-black/50'}`}
           >
-            <Flash size={20} />
+            <Slash size={20} />
           </button>
           
           <div className="flex gap-2">

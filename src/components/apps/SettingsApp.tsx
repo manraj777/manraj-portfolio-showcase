@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { 
   Wifi, 
   Bluetooth, 
   Volume2, 
   Battery, 
-  Display, 
+  Monitor, 
   Shield, 
   Users, 
   HardDrive,
@@ -29,7 +28,7 @@ const SettingsApp: React.FC<SettingsAppProps> = ({ onClose }) => {
       title: 'System',
       items: [
         { name: 'Sound', icon: <Volume2 size={20} />, status: '70%' },
-        { name: 'Display', icon: <Display size={20} />, status: 'Default' },
+        { name: 'Display', icon: <Monitor size={20} />, status: 'Default' },
         { name: 'Battery', icon: <Battery size={20} />, status: '85%' },
         { name: 'Storage', icon: <HardDrive size={20} />, status: '256 GB available' },
       ]

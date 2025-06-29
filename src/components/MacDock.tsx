@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   User, 
@@ -12,7 +11,7 @@ import {
   BookOpen,
   Users,
   Calculator,
-  Safari,
+  Globe,
   Folder,
   Camera,
   Music,
@@ -49,7 +48,7 @@ const MacDock: React.FC<MacDockProps> = ({ onOpenApp }) => {
     {
       id: 'safari',
       label: 'Safari',
-      icon: <Safari size={24} />,
+      icon: <Globe size={24} />,
       onClick: () => onOpenApp('safari'),
       color: 'bg-gradient-to-br from-blue-400 to-blue-600',
       isApp: true
