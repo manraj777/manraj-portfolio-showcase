@@ -1,5 +1,5 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -74,78 +74,53 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px;
+    scroll-padding-top: 120px;
   }
 
   body {
-    @apply bg-background text-foreground font-inter transition-colors duration-300;
-    background: 
-      radial-gradient(circle at 20% 80%, hsl(var(--accent) / 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, hsl(var(--accent) / 0.12) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, hsl(var(--accent) / 0.08) 0%, transparent 50%),
-      linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--secondary)) 100%);
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'SF Pro Display', 'Inter', sans-serif;
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
   }
 
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-      radial-gradient(circle at 50% 50%, hsl(var(--accent) / 0.05) 0%, transparent 70%),
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        hsl(var(--border) / 0.05) 2px,
-        hsl(var(--border) / 0.05) 4px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 2px,
-        hsl(var(--border) / 0.05) 2px,
-        hsl(var(--border) / 0.05) 4px
-      );
-    pointer-events: none;
-    z-index: -1;
-    animation: backgroundPulse 20s ease-in-out infinite;
-  }
-
-  body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-      radial-gradient(circle at 25% 75%, hsl(var(--accent) / 0.03) 0%, transparent 40%),
-      radial-gradient(circle at 75% 25%, hsl(var(--accent) / 0.03) 0%, transparent 40%),
-      radial-gradient(circle at 90% 90%, hsl(var(--accent) / 0.02) 0%, transparent 30%);
-    pointer-events: none;
-    z-index: -1;
-    animation: backgroundFloat 30s ease-in-out infinite reverse;
-  }
-
+  /* macOS-style scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
+    background: transparent;
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-background;
+    background: transparent;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-muted rounded-full;
+    @apply bg-gray-400/50 rounded-full;
+    border: 2px solid transparent;
+    background-clip: content-box;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-accent/30;
+    @apply bg-gray-500/70;
   }
+
+  /* macOS-style selection */
+  ::selection {
+    @apply bg-blue-500/30;
+  }
+}
+
+/* macOS-style animations */
+@keyframes dock-bounce {
+  0%, 100% { 
+    transform: translateY(0) scale(1);
+  }
+  50% { 
+    transform: translateY(-10px) scale(1.1);
+  }
+}
+
+.dock-bounce {
+  animation: dock-bounce 0.6s ease-in-out;
 }
