@@ -1,8 +1,10 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import SEO from '@/components/SEO';
 import MacMenuBar from '@/components/MacMenuBar';
 import MacWindow from '@/components/MacWindow';
 import MacDock from '@/components/MacDock';
+import AppManager from '@/components/AppManager';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Skills from '@/components/Skills';
@@ -18,6 +20,18 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
 const Index = () => {
+  const [openApps, setOpenApps] = useState<string[]>([]);
+
+  const handleOpenApp = (appId: string) => {
+    if (!openApps.includes(appId)) {
+      setOpenApps(prev => [...prev, appId]);
+    }
+  };
+
+  const handleCloseApp = (appId: string) => {
+    setOpenApps(prev => prev.filter(id => id !== appId));
+  };
+
   return (
     <>
       <SEO />
@@ -33,7 +47,7 @@ const Index = () => {
         {/* macOS Menu Bar */}
         <MacMenuBar />
         
-        {/* Main Content Window */}
+        {/* Main Portfolio Content Window */}
         <div className="pt-8 pb-20 px-4">
           <MacWindow title="Manraj Gupta - Full Stack Developer Portfolio" className="max-w-6xl mx-auto">
             <div className="bg-background text-foreground">
@@ -54,8 +68,11 @@ const Index = () => {
           </MacWindow>
         </div>
         
+        {/* App Manager for handling opened apps */}
+        <AppManager openApps={openApps} onCloseApp={handleCloseApp} />
+        
         {/* macOS Dock */}
-        <MacDock />
+        <MacDock onOpenApp={handleOpenApp} />
       </div>
     </>
   );

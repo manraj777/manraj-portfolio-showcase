@@ -10,7 +10,15 @@ import {
   FileText,
   Award,
   BookOpen,
-  Users
+  Users,
+  Calculator,
+  Safari,
+  Folder,
+  Camera,
+  Music,
+  Settings,
+  MessageCircle,
+  Calendar
 } from 'lucide-react';
 
 interface DockItem {
@@ -19,12 +27,82 @@ interface DockItem {
   icon: React.ReactNode;
   onClick: () => void;
   color: string;
+  isApp?: boolean;
 }
 
-const MacDock = () => {
+interface MacDockProps {
+  onOpenApp: (appId: string) => void;
+}
+
+const MacDock: React.FC<MacDockProps> = ({ onOpenApp }) => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const dockItems: DockItem[] = [
+    {
+      id: 'finder',
+      label: 'Finder',
+      icon: <Folder size={24} />,
+      onClick: () => onOpenApp('finder'),
+      color: 'bg-blue-500',
+      isApp: true
+    },
+    {
+      id: 'safari',
+      label: 'Safari',
+      icon: <Safari size={24} />,
+      onClick: () => onOpenApp('safari'),
+      color: 'bg-gradient-to-br from-blue-400 to-blue-600',
+      isApp: true
+    },
+    {
+      id: 'calculator',
+      label: 'Calculator',
+      icon: <Calculator size={24} />,
+      onClick: () => onOpenApp('calculator'),
+      color: 'bg-gray-800',
+      isApp: true
+    },
+    {
+      id: 'calendar',
+      label: 'Calendar',
+      icon: <Calendar size={24} />,
+      onClick: () => onOpenApp('calendar'),
+      color: 'bg-white text-black border border-gray-300',
+      isApp: true
+    },
+    {
+      id: 'messages',
+      label: 'Messages',
+      icon: <MessageCircle size={24} />,
+      onClick: () => onOpenApp('messages'),
+      color: 'bg-green-500',
+      isApp: true
+    },
+    {
+      id: 'music',
+      label: 'Music',
+      icon: <Music size={24} />,
+      onClick: () => onOpenApp('music'),
+      color: 'bg-gradient-to-br from-pink-500 to-red-500',
+      isApp: true
+    },
+    {
+      id: 'camera',
+      label: 'Camera',
+      icon: <Camera size={24} />,
+      onClick: () => onOpenApp('camera'),
+      color: 'bg-gray-600',
+      isApp: true
+    },
+    {
+      id: 'settings',
+      label: 'System Preferences',
+      icon: <Settings size={24} />,
+      onClick: () => onOpenApp('settings'),
+      color: 'bg-gray-500',
+      isApp: true
+    },
+    // Portfolio sections
     {
       id: 'about',
       label: 'About',
@@ -45,34 +123,6 @@ const MacDock = () => {
       icon: <Briefcase size={24} />,
       onClick: () => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }),
       color: 'bg-purple-500'
-    },
-    {
-      id: 'experience',
-      label: 'Experience',
-      icon: <FileText size={24} />,
-      onClick: () => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' }),
-      color: 'bg-orange-500'
-    },
-    {
-      id: 'achievements',
-      label: 'Achievements',
-      icon: <Award size={24} />,
-      onClick: () => document.getElementById('achievements')?.scrollIntoView({ behavior: 'smooth' }),
-      color: 'bg-yellow-500'
-    },
-    {
-      id: 'blog',
-      label: 'Blog',
-      icon: <BookOpen size={24} />,
-      onClick: () => document.getElementById('blog')?.scrollIntoView({ behavior: 'smooth' }),
-      color: 'bg-pink-500'
-    },
-    {
-      id: 'testimonials',
-      label: 'Testimonials',
-      icon: <Users size={24} />,
-      onClick: () => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' }),
-      color: 'bg-indigo-500'
     },
     {
       id: 'contact',
@@ -119,12 +169,14 @@ const MacDock = () => {
               {/* Dock Icon */}
               <button
                 onClick={item.onClick}
-                className={`${item.color} w-12 h-12 rounded-xl flex items-center justify-center text-white transition-all duration-300 hover:scale-125 hover:-translate-y-2 active:scale-110 shadow-lg hover:shadow-2xl`}
+                className={`${item.color} w-12 h-12 rounded-xl flex items-center justify-center text-white transition-all duration-300 hover:scale-125 hover:-translate-y-2 active:scale-110 shadow-lg hover:shadow-2xl relative overflow-hidden`}
                 style={{
                   transform: hoveredItem === item.id ? 'scale(1.2) translateY(-8px)' : 'scale(1)'
                 }}
               >
                 {item.icon}
+                {/* Realistic app shine effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-xl"></div>
               </button>
               
               {/* Active indicator dot */}
